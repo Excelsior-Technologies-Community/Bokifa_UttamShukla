@@ -259,7 +259,7 @@ const Page1 = () => {
         { id: "103", title: "", price: "", link: "" },
         { id: "104", title: "", price: "", link: "" },
         { id: "105", title: "", price: "", link: "" },
-        { id: "106", title: "", price: "", link: "" }
+        { id: "106", title: "", price: "", link: "" },
     ];
 
 
