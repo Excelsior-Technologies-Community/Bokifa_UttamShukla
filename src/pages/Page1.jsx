@@ -12,6 +12,8 @@ import { Pagination, Navigation } from 'swiper/modules';
 import Hero from '../components/Hero';
 import BestCollection from '../components/BestCollection';
 import ScalableCards from '../components/ScalableCards';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 const Page1 = () => {
 
     const imagesData = [
@@ -359,9 +361,10 @@ const Page1 = () => {
 
     return (
         <>
+            <Header />
             <Hero />
 
-            <div className='font-lora h-[80vh] my-5 p-5 '>
+            <div className='font-lora h-[80vh]  my-5 p-5 '>
                 <div className='flex justify-between items-center'>
                     <h1 className='text-5xl font-light'>This week's highlights</h1>
                     <button className='capitalize px-7 py-3 bg-white rounded-full border-2'>browse all</button>
@@ -395,7 +398,7 @@ const Page1 = () => {
                 </div>
             </div>
 
-            <div className='font-lora h-[60vh] bg-[#f9f5f0] my-5 p-5 '>
+            <div className='font-lora h-[60vh] w-full bg-[#f9f5f0] my-5 p-5 '>
                 <div className='flex justify-between items-center'>
                     <h1 className='text-5xl font-light'>Top categories</h1>
                     <button className='capitalize px-7 py-3 bg-white rounded-full'>browse all</button>
@@ -404,9 +407,9 @@ const Page1 = () => {
                     {
                         imagesData.map((items) => {
                             return (
-                                <div key={items.id} className="border-2 py-10 px-5 inline-block text-center">
+                                <div key={items.id} className="border-2 py-10 px-4 inline-block text-center">
                                     <img
-                                        className="w-[100px] mb-5"
+                                        className="w-[70px] mb-5"
                                         src={items.image}
                                         alt={items.title}
                                     />
@@ -418,7 +421,7 @@ const Page1 = () => {
                 </div>
             </div>
 
-            <div className='font-lora h-[80vh] my-5 p-5 '>
+            <div className='font-lora h-auto my-5 p-5 '>
                 <div className='flex justify-between items-center'>
                     <h1 className='text-5xl font-light'>Current bestselling books</h1>
                     <button className='capitalize px-7 py-3 bg-white rounded-full border-2'>browse all</button>
@@ -566,7 +569,7 @@ const Page1 = () => {
                     </Swiper>
                 </div>
             </div>
-            <div className='h-[70vh] font-lora w-full bg-[#f9f5f0]'>
+            <div className='h-auto py-5 font-lora w-full bg-[#f9f5f0]'>
                 <h1 className='font-semibold text-5xl py-10 px-5'>What client says</h1>
 
                 <Swiper
@@ -767,6 +770,122 @@ const Page1 = () => {
                     <h5 class="text-sm text-gray-500">Check your local stores now</h5>
                 </div>
             </div>
+            <div>
+                <div className='font-lora h-auto p-5'>
+                    <div className='flex justify-between items-center'>
+                        <h1 className='text-5xl font-light'>News & events</h1>
+                        <button className='capitalize px-7 py-3 bg-white rounded-full border-2'>browse all</button>
+                    </div>
+                    <Swiper
+                        slidesPerView={3}
+                        spaceBetween={10}
+                        
+                        className="mySwiper"
+                    >
+                        <SwiperSlide>
+                            <div className='p-5 '>
+                                <div className='h-auto w-auto rounded-lg  overflow-hidden '>
+                                    <img className=' rounded-lg object-cover object-center transition-transform duration-500 ease-in-out hover:scale-110' src="https://ap-bokifa.myshopify.com/cdn/shop/articles/blog_i_8.jpg?v=1729755150&width=533" alt="" />
+                                </div>
+                                <div className=' rounded-full px-2 border-2 inline-block translate-x-8 -translate-y-10 bg-white text-gray-600    '>
+                                    <p>IN <span className='text-green-800 '>Tips & Tricks</span> Oct 24, 2024 By Ha Ei</p>
+                                </div>
+                                <div>
+                                    <h1 className='text-3xl'>Behind the Scenes with Author Victoria Aveyard</h1>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                       <SwiperSlide>
+                            <div className='p-5 '>
+                                <div className='h-auto w-auto rounded-lg  overflow-hidden '>
+                                    <img className=' rounded-lg object-cover object-center transition-transform duration-500 ease-in-out hover:scale-110' 
+                                    src="https://ap-bokifa.myshopify.com/cdn/shop/articles/blog_i_7.jpg?v=1729755134&width=533" alt="" />
+                                </div>
+                                <div className=' rounded-full px-2 border-2 inline-block translate-x-8 -translate-y-10 bg-white text-gray-600    '>
+                                    <p>IN <span className='text-green-800 '>Tips & Tricks</span> Oct 24, 2024 By Ha Ei</p>
+                                </div>
+                                <div>
+                                    <h1 className='text-3xl'>5 Attractive Bookstore WordPress Themes</h1>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className='p-5 '>
+                                <div className='h-auto w-auto rounded-lg  overflow-hidden '>
+                                    <img className=' rounded-lg object-cover object-center transition-transform duration-500 ease-in-out hover:scale-110' 
+                                    src="https://ap-bokifa.myshopify.com/cdn/shop/articles/blog_i_6.jpg?v=1729755116&width=533" alt="" />
+                                </div>
+                                <div className=' rounded-full px-2 border-2 inline-block translate-x-8 -translate-y-10 bg-white text-gray-600    '>
+                                    <p>IN <span className='text-green-800 '>Tips & Tricks</span> Oct 24, 2024 By Ha Ei</p>
+                                </div>
+                                <div>
+                                    <h1 className='text-3xl'>Top 10 Books to Make It a Great Yeargh</h1>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className='p-5 '>
+                                <div className='h-auto w-auto rounded-lg  overflow-hidden '>
+                                    <img className=' rounded-lg object-cover object-center transition-transform duration-500 ease-in-out hover:scale-110' 
+                                    src="https://ap-bokifa.myshopify.com/cdn/shop/articles/blog_i_5.jpg?v=1729755099&width=533" alt="" />
+                                </div>
+                                <div className=' rounded-full px-2 border-2 inline-block translate-x-8 -translate-y-10 bg-white text-gray-600    '>
+                                    <p>IN <span className='text-green-800 '>Tips & Tricks</span> Oct 24, 2024 By Ha Ei</p>
+                                </div>
+                                <div>
+                                    <h1 className='text-3xl'>Author Special: A Q&A with Brené Brown</h1>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className='p-5 '>
+                                <div className='h-auto w-auto rounded-lg  overflow-hidden '>
+                                    <img className=' rounded-lg object-cover object-center transition-transform duration-500 ease-in-out hover:scale-110' 
+                                    src="https://ap-bokifa.myshopify.com/cdn/shop/articles/blog_i_4_0d786b92-cfae-487f-b2c0-5d6e4ef47c7c.jpg?v=1729755082&width=533" alt="" />
+                                </div>
+                                <div className=' rounded-full px-2 border-2 inline-block translate-x-8 -translate-y-10 bg-white text-gray-600    '>
+                                    <p>IN <span className='text-green-800 '>Tips & Tricks</span> Oct 24, 2024 By Ha Ei</p>
+                                </div>
+                                <div>
+                                    <h1 className='text-3xl'>Should You Feel Embarrassed for Reading Kids Bo...</h1>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className='p-5 '>
+                                <div className='h-auto w-auto rounded-lg  overflow-hidden '>
+                                    <img className=' rounded-lg object-cover object-center transition-transform duration-500 ease-in-out hover:scale-110' 
+                                    src="https://ap-bokifa.myshopify.com/cdn/shop/articles/blog_i_2.jpg?v=1729755046&width=533" alt="" />
+                                </div>
+                                <div className=' rounded-full px-2 border-2 inline-block translate-x-8 -translate-y-10 bg-white text-gray-600    '>
+                                    <p>IN <span className='text-green-800 '>Tips & Tricks</span> Oct 24, 2024 By Ha Ei</p>
+                                </div>
+                                <div>
+                                    <h1 className='text-3xl'>Activities of the Frankfurt Book Fair Internati...</h1>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className='p-5 '>
+                                <div className='h-auto w-auto rounded-lg  overflow-hidden '>
+                                    <img className=' rounded-lg object-cover object-center transition-transform duration-500 ease-in-out hover:scale-110' 
+                                    src="https://ap-bokifa.myshopify.com/cdn/shop/articles/blog_i_1.jpg?v=1729754862&width=533" alt="" />
+                                </div>
+                                <div className=' rounded-full px-2 border-2 inline-block translate-x-8 -translate-y-10 bg-white text-gray-600    '>
+                                    <p>IN <span className='text-green-800 '>Tips & Tricks</span> Oct 24, 2024 By Ha Ei</p>
+                                </div>
+                                <div>
+                                    <h1 className='text-3xl'>Top 5 Tarot Decks for the Tarot World Summit</h1>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    </Swiper>
+
+
+
+                </div>
+
+            </div>
             <div className='font-lora flex justify-between h-auto p-10'>
                 <h3 className='text-5xl'>Stay in the know</h3>
                 <p className='w-1/3 text-gray-400 text-lg'>Subscribe to our newsletter and stay updated on latest offers, discounts and events near you.</p>
@@ -787,6 +906,8 @@ const Page1 = () => {
                     <i class="ri-instagram-line bg-purple-500 p-3 rounded-full"></i>
                 </div>
             </div>
+            <Footer />
+
 
         </>
     )
