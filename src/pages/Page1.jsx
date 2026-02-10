@@ -745,29 +745,29 @@ const Page1 = () => {
 
 
             </div>
-            <div class="font-lora grid grid-cols-4 grid-rows-1 gap-6 text-center py-10">
-                <div class="flex flex-col items-center space-y-2">
-                    <i class="ri-truck-line text-4xl "></i>
-                    <h2 class="text-lg font-semibold">FAST DELIVERY</h2>
-                    <h5 class="text-sm text-gray-500">Free standard delivery</h5>
+            <div className="font-lora grid grid-cols-4 grid-rows-1 gap-6 text-center py-10">
+                <div className="flex flex-col items-center space-y-2">
+                    <i className="ri-truck-line text-4xl "></i>
+                    <h2 className="text-lg font-semibold">FAST DELIVERY</h2>
+                    <h5 className="text-sm text-gray-500">Free standard delivery</h5>
                 </div>
 
-                <div class="flex flex-col items-center space-y-2">
-                    <i class="ri-gift-line text-4xl "></i>
-                    <h2 class="text-lg font-semibold">BEST PRICES & OFFERS</h2>
-                    <h5 class="text-sm text-gray-500">Multiple gift options available</h5>
+                <div className="flex flex-col items-center space-y-2">
+                    <i className="ri-gift-line text-4xl "></i>
+                    <h2 className="text-lg font-semibold">BEST PRICES & OFFERS</h2>
+                    <h5 className="text-sm text-gray-500">Multiple gift options available</h5>
                 </div>
 
-                <div class="flex flex-col items-center space-y-2">
-                    <i class="ri-percent-line text-4xl "></i>
-                    <h2 class="text-lg font-semibold">GREAT DAILY DEAL</h2>
-                    <h5 class="text-sm text-gray-500">Orders $50 or more</h5>
+                <div className="flex flex-col items-center space-y-2">
+                    <i className="ri-percent-line text-4xl "></i>
+                    <h2 className="text-lg font-semibold">GREAT DAILY DEAL</h2>
+                    <h5 className="text-sm text-gray-500">Orders $50 or more</h5>
                 </div>
 
-                <div class="flex flex-col items-center space-y-2">
-                    <i class="ri-shopping-cart-line text-4xl "></i>
-                    <h2 class="text-lg font-semibold">CLICK & COLLECT</h2>
-                    <h5 class="text-sm text-gray-500">Check your local stores now</h5>
+                <div className="flex flex-col items-center space-y-2">
+                    <i className="ri-shopping-cart-line text-4xl "></i>
+                    <h2 className="text-lg font-semibold">CLICK & COLLECT</h2>
+                    <h5 className="text-sm text-gray-500">Check your local stores now</h5>
                 </div>
             </div>
             <div>
@@ -901,9 +901,9 @@ const Page1 = () => {
                 </div>
 
                 <div className='flex items-center gap-2'>
-                    <i class="ri-facebook-box-line bg-blue-500 p-3 rounded-full"></i>
-                    <i class="ri-twitter-x-line bg-black text-white p-3 rounded-full"></i>
-                    <i class="ri-instagram-line bg-purple-500 p-3 rounded-full"></i>
+                    <i className="ri-facebook-box-line bg-blue-500 p-3 rounded-full"></i>
+                    <i className="ri-twitter-x-line bg-black text-white p-3 rounded-full"></i>
+                    <i className="ri-instagram-line bg-purple-500 p-3 rounded-full"></i>
                 </div>
             </div>
             <Footer />

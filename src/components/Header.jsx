@@ -7,9 +7,9 @@ const Header = () => {
         <>
             <div className='font-lora'>
                 <div className='bg-green-950 text-white text-center py-2 flex justify-center items-center gap-10'>
-                    <i class="ri-arrow-left-fill"></i>
+                    <i className="ri-arrow-left-fill"></i>
                     <h5 className='tetx-lg'>All books at least 50% off list prices every day</h5>
-                    <i class="ri-arrow-right-fill"></i>
+                    <i className="ri-arrow-right-fill"></i>
                 </div>
                 <div className='px-5 py-8'>
                     <div className='flex justify-between items-center border-b-2 pb-8'>
@@ -21,16 +21,16 @@ const Header = () => {
                                 placeholder="Search our store"
                             />
                             <button className="ml-2 px-4 py-3 bg-green-900 text-white rounded-full">
-                                <i class="ri-search-line"></i> Subscribe
+                                <i className="ri-search-line"></i> Subscribe
                             </button>
                         </div>
                         <div className='flex gap-2 items-center'>
                             <p className='border-e-2 pe-2 text-lg'>USD $</p>
                             <p className='text-lg'>English</p>
                             <div className='text-2xl flex gap-2'>
-                                <i class="ri-user-line"></i>
-                                <i class="ri-poker-hearts-line"></i>
-                                <i class="ri-shopping-bag-line"></i>
+                                <i className="ri-user-line"></i>
+                                <i className="ri-poker-hearts-line"></i>
+                                <i className="ri-shopping-bag-line"></i>
                             </div>
                         </div>
 
