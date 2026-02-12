@@ -6,6 +6,8 @@ import Blog from './pages/Blog'
 import Contact from './pages/Contact'
 import Aboutus from './pages/Aboutus'
 import Product from './pages/Product'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 const Home = () => {
     return (
@@ -13,10 +15,12 @@ const Home = () => {
             {/* <Page1 /> */}
             {/* <Shop /> */}
             {/* <Faqs /> */}
-            {/* <Blog /> */}
+            <Blog />
             {/* <Contact /> */}
             {/* <Aboutus /> */}
-            <Product />
+            {/* <Product /> */}
+            {/* <Header /> */}
+            {/* <Footer /> */}
         </>
     )
 }

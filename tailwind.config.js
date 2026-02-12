@@ -5,8 +5,8 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: { 
-        lora: ['Lora', 'serif'], 
+      fontFamily: {
+        lora: ['Lora', 'serif'],
       },
     },
   },

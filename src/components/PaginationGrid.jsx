@@ -193,17 +193,17 @@ const PaginationGrid = () => {
 
     return (
         <>
-            <div className='w-[70%]'>
+            <div className='lg:w-[70%]'>
 
 
-                <div className="grid grid-cols-3 gap-6 ">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {currentItems.map((items) => (
                         <div
                             key={items.id}
-                            className="group border rounded-xl p-3 text-center overflow-hidden"
+                            className="group hover:border rounded-xl p-3 text-center overflow-hidden"
                         >
                             {/* Image wrapper */}
-                            <div className="w-full h-[62vh] overflow-hidden rounded-lg">
+                            <div className="w-full h-auto overflow-hidden rounded-lg">
                                 <img
                                     src={items.img || "/placeholder.png"}
                                     alt={items.title}
@@ -223,10 +223,13 @@ const PaginationGrid = () => {
                                 {items.price}
                             </h3>
 
-                            <button className='text-white bg-green-800 px-24 py-2 rounded-full hidden group-hover:block transition duration-300 ease-in-out'>Add to cart</button>
+                            <button className="text-white bg-green-800 px-24 py-2 rounded-full hidden group-hover:block transition duration-300 ease-in-out">
+                                Add to cart
+                            </button>
                         </div>
                     ))}
                 </div>
+
                 <div className="flex justify-center gap-4 mt-8">
                     <button
                         disabled={currentPage === 1}

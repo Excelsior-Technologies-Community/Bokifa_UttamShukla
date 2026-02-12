@@ -92,9 +92,7 @@ const Blog = () => {
                 </div>
                 <div>
                     <h2 className='text-gray-500 px-5 py-2 font-light text-6xl'>News</h2>
-
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:p-4">
                         {currentItems.map((item, index) => (
                             <div key={index} className="p-5">
                                 <div className="h-auto w-auto rounded-lg overflow-hidden">
@@ -104,13 +102,13 @@ const Blog = () => {
                                         alt=""
                                     />
                                 </div>
-                                <div className="rounded-full px-4 border-2 inline-block translate-x-20 -translate-y-5 bg-white text-gray-600">
+                                <div className="rounded-full hidden  sm:px-2 xl:px-4 border-2 sm:inline-block translate-x-5 -translate-y-5 bg-white text-gray-600">
                                     <p className="m-0">
                                         IN <span className="text-green-800">Tips & Tricks</span> {item.date} By Ha Ei
                                     </p>
                                 </div>
                                 <div>
-                                    <h1 className="text-3xl">{item.title}</h1>
+                                    <h1 className="text-lg sm:text-3xl">{item.title}</h1>
                                     <p className="text-gray-600">{item.p}</p>
                                 </div>
                             </div>

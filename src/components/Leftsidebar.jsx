@@ -16,7 +16,7 @@ const Leftsidebar = () => {
     };
     return (
         <>
-            <div className='w-[30%] '>
+            <div className='w-[30%] hidden lg:block '>
                 <h4 className='font-extralight border-b-2 pb-4'>Product categories</h4>
                 <div className='text-gray-500'>
                     <p className='m-0'>Books(28)</p>
