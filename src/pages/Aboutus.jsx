@@ -19,10 +19,10 @@ const Aboutus = () => {
                         </span> selections.
                     </h1>
                 </div>
-                <div className='flex gap-4 p-4'>
-                    <div className='h-1/2 w-1/2 relative'>
+                <div className='flex flex-col lg:flex-row gap-4 p-4'>
+                    <div className='h-1/2 w-full lg:w-1/2 relative'>
                         <img className='w-full object-cover' src="https://cdn.shopify.com/s/files/1/0906/6014/3387/files/Mask_group_7_1.png?v=1729850718" alt="" />
-                        <div className='text-black bg-white w-2/3 z-20 absolute bottom-0 right-0 p-5 rounded-tl-2xl'>
+                        <div className='text-black bg-white w-full sm:w-2/3 z-20 absolute bottom-0 right-0 p-5 rounded-tl-2xl'>
                             <h1>Our Mission</h1>
                             <p>Our mission is simple: To help local, independent bookstores thrive in the age of ecommerce.</p>
                         </div>
@@ -37,7 +37,7 @@ const Aboutus = () => {
                             </div>
                         </div> */}
                     </div>
-                    <div className='h-auto w-1/2'>
+                    <div className='h-auto w-full lg:w-1/2'>
                         <img className='w-full h-full object-cover' src="https://ap-bokifa.myshopify.com/cdn/shop/files/Mask_group_6_1.png?v=1729850527&width=720" alt="" />
                     </div>
                 </div>
@@ -49,8 +49,20 @@ const Aboutus = () => {
                     <div>
 
                         <Swiper
-                            slidesPerView={3.5}
+                            slidesPerView={1}
                             spaceBetween={20}
+                            breakpoints={{
+                                375: {
+                                    slidesPerView: 1, // for screens < 768px
+                                },
+                                742: {
+                                    slidesPerView: 2, // for screens < 1024px
+                                },
+
+                                1024: {
+                                    slidesPerView: 3.5, // for screens >= 1024px
+                                },
+                            }}
 
                             className="mySwiper"
                         >
@@ -118,8 +130,20 @@ const Aboutus = () => {
                     <h1 className='text-center font-semibold text-5xl py-10 px-5'>What client says</h1>
 
                     <Swiper
-                        slidesPerView={4.5}
+                        slidesPerView={1}
                         spaceBetween={20}
+                        breakpoints={{
+                            375: {
+                                slidesPerView: 1, // for screens < 768px
+                            },
+                            768: {
+                                slidesPerView: 2, // for screens < 1024px
+                            },
+
+                            1024: {
+                                slidesPerView: 3.5, // for screens >= 1024px
+                            },
+                        }}
 
                         className="mySwiper"
                     >
@@ -290,30 +314,30 @@ const Aboutus = () => {
 
 
                 </div>
-                <div className='flex justify-between items-center p-5'>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-5 text-center">
                     <div className='flex flex-col items-center gap-2'>
-                        <img src="https://ap-bokifa.myshopify.com/cdn/shop/files/1_2.png?v=1729851560&width=80" alt="" />
-                        <h1 className='font-extralight text-green-800 text-5xl'>15,254</h1>
-                        <h5>total books</h5>
-                    </div>
-                    <div className='flex flex-col items-center gap-2'>
-                        <img src="https://ap-bokifa.myshopify.com/cdn/shop/files/1_2.png?v=1729851560&width=80" alt="" />
-                        <h1 className='font-extralight text-green-800 text-5xl'>15,254</h1>
-                        <h5>total books</h5>
-                    </div>
-                    <div className='flex flex-col items-center gap-2'>
-                        <img src="https://ap-bokifa.myshopify.com/cdn/shop/files/1_2.png?v=1729851560&width=80" alt="" />
-                        <h1 className='font-extralight text-green-800 text-5xl'>15,254</h1>
-                        <h5>total books</h5>
-                    </div>
-                    <div className='flex flex-col items-center gap-2'>
-                        <img src="https://ap-bokifa.myshopify.com/cdn/shop/files/1_2.png?v=1729851560&width=80" alt="" />
-                        <h1 className='font-extralight text-green-800 text-5xl'>15,254</h1>
-                        <h5>total books</h5>
-                    </div>
+                    <img src="https://ap-bokifa.myshopify.com/cdn/shop/files/1_2.png?v=1729851560&width=80" alt="" />
+                    <h1 className='font-extralight text-green-800 text-5xl'>15,254</h1>
+                    <h5>total books</h5>
                 </div>
-                <Footer />
+                <div className='flex flex-col items-center gap-2'>
+                    <img src="https://ap-bokifa.myshopify.com/cdn/shop/files/1_2.png?v=1729851560&width=80" alt="" />
+                    <h1 className='font-extralight text-green-800 text-5xl'>15,254</h1>
+                    <h5>total books</h5>
+                </div>
+                <div className='flex flex-col items-center gap-2'>
+                    <img src="https://ap-bokifa.myshopify.com/cdn/shop/files/1_2.png?v=1729851560&width=80" alt="" />
+                    <h1 className='font-extralight text-green-800 text-5xl'>15,254</h1>
+                    <h5>total books</h5>
+                </div>
+                <div className='flex flex-col items-center gap-2'>
+                    <img src="https://ap-bokifa.myshopify.com/cdn/shop/files/1_2.png?v=1729851560&width=80" alt="" />
+                    <h1 className='font-extralight text-green-800 text-5xl'>15,254</h1>
+                    <h5>total books</h5>
+                </div>
             </div>
+            <Footer />
+        </div >
         </>
     )
 }

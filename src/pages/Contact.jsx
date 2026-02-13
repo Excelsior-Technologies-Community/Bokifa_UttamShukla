@@ -13,7 +13,7 @@ const Contact = () => {
                     <h1 className='text-center pt-5'>Our worldwide office</h1>
                     <p className='text-center'>Worldwide logistics group now has 38 offices in 20 countries. “We've always had <br />
                         a strong worldwide network, but it's our client-driven intention.</p>
-                    <div className='flex items-center justify-between text-center p-5'>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center p-5">
                         <div className='flex flex-col items-center'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
                                 <path d="M33 39H35V44H33V39Z" fill="#07D7AD"></path>
@@ -112,8 +112,8 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
-                <div className='flex'>
-                    <div className='h-auto w-1/2 '>
+                <div className='flex flex-col md:flex-row items-center'>
+                    <div className='h-auto w-full md:w-1/2 '>
                         <h1 className='text-6xl p-3'>Get in touch and we’ll help your business</h1>
                         <p className='px-3'>Lorem ipsum dolor sit amet, cons ectetur adipiscing elitull am aliqu am, velit rutrum dictum lobortis, turpis justo auc tor quam, a auctor lorem odio in nunc.</p>
                         <div>
@@ -147,7 +147,7 @@ const Contact = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='h-auto w-1/2'>
+                    <div className='h-auto w-full md:w-1/2'>
                         <div className="max-w-3xl mx-auto p-8 bg-white shadow-lg rounded-lg">
                             <h2 className="text-3xl font-bold mb-2">Need Help?</h2>
                             <p className="text-gray-600 mb-6">
