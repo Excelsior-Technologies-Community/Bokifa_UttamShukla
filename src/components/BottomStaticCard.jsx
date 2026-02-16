@@ -21,7 +21,7 @@ const BottomStaticCard = () => {
                             Ap Bokifa
                         </a>
                         <h3 className="text-green-800 font-bold text-xl mt-2">$29.95</h3>
-                        <button className="text-white bg-green-800 px-6 py-2 rounded-full hidden group-hover:block transition duration-300 ease-in-out">
+                        <button className="text-white w-full bg-green-800 px-6 py-2 rounded-full hidden group-hover:block transition duration-300 ease-in-out">
                             Add to cart
                         </button>
                     </div>
@@ -46,8 +46,9 @@ const BottomStaticCard = () => {
                         <h3 className="text-green-800 font-bold text-xl mt-2">
                             $29.95
                         </h3>
-
-                        <button className='text-white bg-green-800 px-28 py-2 rounded-full hidden group-hover:block transition duration-300 ease-in-out'>Add to cart</button>
+                        <button className="text-white w-full bg-green-800 px-6 py-2 rounded-full hidden group-hover:block transition duration-300 ease-in-out">
+                            Add to cart
+                        </button>
                     </div>
                     <div className=" group border rounded-xl p-3 text-center overflow-hidden">
                         <div className=" overflow-hidden  rounded-lg">
@@ -70,7 +71,9 @@ const BottomStaticCard = () => {
                             $29.95
                         </h3>
 
-                        <button className='text-white bg-green-800 px-28 py-2 rounded-full hidden group-hover:block transition duration-300 ease-in-out'>Add to cart</button>
+                        <button className="text-white w-full bg-green-800 px-6 py-2 rounded-full hidden group-hover:block transition duration-300 ease-in-out">
+                            Add to cart
+                        </button>
                     </div>
                     <div className="group border rounded-xl p-3 text-center overflow-hidden">
                         <div className="overflow-hidden rounded-lg">
@@ -87,13 +90,10 @@ const BottomStaticCard = () => {
                             Ap Bokifa
                         </a>
                         <h3 className="text-green-800 font-bold text-xl mt-2">$29.95</h3>
-                        <button className="text-white bg-green-800 px-6 py-2 rounded-full hidden group-hover:block transition duration-300 ease-in-out">
+                        <button className="text-white w-full bg-green-800 px-6 py-2 rounded-full hidden group-hover:block transition duration-300 ease-in-out">
                             Add to cart
                         </button>
                     </div>
-
-
-                    {/* Repeat other product cards */}
                 </div>
 
             </div>

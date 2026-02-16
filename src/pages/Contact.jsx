@@ -7,7 +7,7 @@ const Contact = () => {
     return (
         <>
             <div>
-                <Header />
+                {/* <Header /> */}
                 <Map />
                 <div className='py-16'>
                     <h1 className='text-center pt-5'>Our worldwide office</h1>
@@ -168,7 +168,7 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
-                <Footer />
+                {/* <Footer /> */}
             </div>
         </>
     )

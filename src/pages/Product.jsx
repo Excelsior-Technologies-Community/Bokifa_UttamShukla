@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Header from '../components/Header'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -7,7 +7,9 @@ import 'swiper/css/pagination';
 import Footer from '../components/Footer';
 
 
-const Product = () => {
+
+const Product = ({ product }) => {
+    
 
     const [format, setformat] = useState("Hardcover")
     const [quantity, setquantity] = useState(1)
@@ -18,7 +20,7 @@ const Product = () => {
     return (
         <>
             <div className="font-lora">
-                <Header />
+                {/* <Header /> */}
                 <div className='flex flex-col md:flex-row gap-2'>
                     <div className='w-full md:w-1/2 p-2 sm:p-10'>
                         <img className='object-cover object-center h-auto w-full' src="https://ap-bokifa.myshopify.com/cdn/shop/files/bo_pro_26.jpg?v=1728615762&width=800" alt="" />
@@ -38,7 +40,7 @@ const Product = () => {
                         </div>
                     </div>
                     <div className='w-full md:w-1/2 py-10 px-4'>
-                        <h1 className='sm:text-3xl md:text-5xl font-light'>A Prayer for Owen Meany</h1>
+                        <h1 className='sm:text-3xl md:text-5xl font-light'>{product.title}</h1>
                         <div className='text-gray-400'>
                             <i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i>(0 reviews)
                         </div>
@@ -100,7 +102,7 @@ const Product = () => {
                                 </button>
                             </div>
 
-                            <button className="bg-green-600 hover:bg-green-800 text-white font-semibold px-12 py-3 rounded-full shadow-md transition duration-200">
+                            <button onClick={() => addToCart(product)} className="bg-green-600 hover:bg-green-800 text-white font-semibold px-12 py-3 rounded-full shadow-md transition duration-200">
                                 Add To Cart
                             </button>
 
@@ -493,7 +495,7 @@ const Product = () => {
 
                     </div>
                 </div>
-                <Footer />
+                {/* <Footer /> */}
 
             </div>
         </>

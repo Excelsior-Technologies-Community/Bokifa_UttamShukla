@@ -85,7 +85,7 @@ const Blog = () => {
 
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <div className="font-lora">
                 <div className="text-white bg-cover h-[50vh] flex items-center justify-center bg-center bg-[url('https://ap-bokifa.myshopify.com/cdn/shop/files/Mask_group_13_1.jpg?v=1729915599&width=2000')]">
                     <h1 className="text-6xl">News</h1>
@@ -139,7 +139,7 @@ const Blog = () => {
                 </div>
 
             </div>
-            <Footer />
+            {/* <Footer /> */}
 
         </>
     )

@@ -1,12 +1,23 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import 'remixicon/fonts/remixicon.css'
+import { CardContext } from '../Context/CardContext.jsx';
+import { Link } from "react-router-dom"
+
+
 
 
 const Header = () => {
 
+    const { cartItem, increase, decrease, removeFromCart } = useContext(CardContext);
+
+
+
     const [quantity, setquantity] = useState(1)
-    const increase = () => setquantity(prev => prev + 1)
-    const decrease = () => setquantity(prev => prev > 1 ? prev - 1 : prev)
+    const inc = () => setquantity(prev => prev + 1)
+    const dec = () => setquantity(prev => prev > 1 ? prev - 1 : prev)
+
+    const [cart, setcart] = useState([]);
+
 
     return (
         <>
@@ -52,6 +63,7 @@ const Header = () => {
                     </div>
                     <div className="hidden md:flex justify-between items-center pt-4">
                         <ul className="flex gap-4 items-center font-semibold text-lg">
+
                             <li>
                                 <div className="dropdown">
                                     <button
@@ -59,7 +71,7 @@ const Header = () => {
                                         data-bs-toggle="dropdown"
                                         aria-expanded="false"
                                     >
-                                        Home
+                                        <Link to="/">Home</Link>
                                     </button>
 
                                     <div className="dropdown-menu hidden p-4 absolute w-screen text-center gap-4">
@@ -89,121 +101,118 @@ const Header = () => {
                             </li>
 
 
-                            <li>
-                                <div className="dropdown">
-                                    <a
-                                        className="btn  dropdown-toggle"
-                                        href="#"
-                                        role="button"
-                                        data-bs-toggle="dropdown"
-                                        aria-expanded="false"
-                                    >
-                                        Shop
-                                    </a>
+                            <li className="nav-item dropdown">
 
-                                    <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item" href="#">Action</a></li>
-                                        <li><a className="dropdown-item" href="#">Another action</a></li>
-                                        <li><a className="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="dropdown">
-                                    <a
-                                        className="btn  dropdown-toggle"
-                                        href="#"
-                                        role="button"
-                                        data-bs-toggle="dropdown"
-                                        aria-expanded="false"
-                                    >
-                                        Blog
-                                    </a>
+                                <button
+                                    className="nav-link dropdown-toggle"
+                                    data-bs-toggle="dropdown"
+                                >
+                                    Shop
+                                </button>
 
-                                    <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item" href="#">Blog 1</a></li>
-                                        <li><a className="dropdown-item" href="#">Blog 2</a></li>
-                                        <li><a className="dropdown-item" href="#">Blog 3</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="dropdown">
-                                    <a
-                                        className="btn  dropdown-toggle"
-                                        href="#"
-                                        role="button"
-                                        data-bs-toggle="dropdown"
-                                        aria-expanded="false"
-                                    >
-                                        Pages
-                                    </a>
+                                <ul className="dropdown-menu">
+                                    <li><Link className="dropdown-item" to="/shop">All Products</Link></li>
+                                    <li><Link className="dropdown-item" to="/shop/sale">Sale</Link></li>
+                                </ul>
 
-                                    <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item" href="#">About us</a></li>
-                                        <li><a className="dropdown-item" href="#">Contact us</a></li>
-                                        <li><a className="dropdown-item" href="#">Our Team</a></li>
-                                    </ul>
-                                </div>
                             </li>
-                            <li>Contact</li>
+
+
+                            <li className="nav-item dropdown">
+
+                                <button
+                                    className="nav-link dropdown-toggle"
+                                    data-bs-toggle="dropdown"
+                                >
+                                    Blog
+                                </button>
+
+                                <ul className="dropdown-menu">
+                                    <li><Link className="dropdown-item" to="/blog">All Blog</Link></li>
+                                    <li><Link className="dropdown-item" to="/blog/blog1">Blog1</Link></li>
+                                </ul>
+
+                            </li>
+                            <li className="nav-item dropdown">
+
+                                <button
+                                    className="nav-link dropdown-toggle"
+                                    data-bs-toggle="dropdown"
+                                >
+                                    Pages
+                                </button>
+
+                                <ul className="dropdown-menu">
+                                    <li><Link className="dropdown-item" to="/aboutus">About us</Link></li>
+                                    <li><Link className="dropdown-item" to="/contact">Contact us</Link></li>
+                                    <li><Link className="dropdown-item" to="/team">Our Team</Link></li>
+                                </ul>
+
+                            </li>
+                            <li className="nav-item dropdown">
+                                <li><Link className="dropdown-item" to="/contact">Contact</Link></li>
+                            </li>
                         </ul>
                         <p>Need help? Call Us: +84 2500 888 33</p>
                     </div>
 
                 </div>
-                <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-                    <div className="offcanvas-header border-b-2 py-4">
-                        <h5 className="offcanvas-title" id="offcanvasExampleLabel"><i className="ri-shopping-bag-2-line"></i> 1 item</h5>
-                        <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+
+
+
+                <div
+                    className="offcanvas offcanvas-end"
+                    tabIndex="-1"
+                    id="offcanvasExample"
+                    aria-labelledby="offcanvasExampleLabel"
+                >
+                    {/* HEADER */}
+                    <div className="offcanvas-header">
+                        <h5 id="offcanvasExampleLabel">Shopping Cart</h5>
+                        <button
+                            type="button"
+                            className="btn-close"
+                            data-bs-dismiss="offcanvas"
+                        ></button>
                     </div>
+
+                    {/* BODY */}
                     <div className="offcanvas-body">
-                        <div className='flex flex-col items-center pt-5'>
-                            <div>
+                        {cartItem.length === 0 ? (
+                            <p>Your cart is empty</p>
+                        ) : (
+                            cartItem.map((item) => (
+                                <div key={item.id} className="flex gap-3 py-5 border-b">
+                                    <img
+                                        src={item.img}
+                                        alt={item.title}
+                                        className="h-24 w-24 object-cover"
+                                    />
 
-                            </div>
-                            <p>Spend $640.05 more and get free shipping!</p>
-                            <h2 className='h-1 w-[90%] bg-black'></h2>
-                            <div className='flex gap-3  py-5 border-b-2'>
-                                <img className='object-cover object-center h-36' src="https://ap-bokifa.myshopify.com/cdn/shop/files/bo_pro_22.jpg?v=1728615626&width=520" alt="" />
+                                    <div className="flex-1">
+                                        <h5 className="text-gray-700">{item.title}</h5>
 
-                                <div>
-                                    <h5 className='text-gray-600'>The Elegance of the Hedgehog - Hardcover</h5>
-                                    <div>
-                                        <div className=" inline-flex me-2 items-center p-1 space-x-4 bg-gray-200  hover:bg-gray-300 ">
-                                            <button onClick={decrease} className="px-1 py-1 " >
-                                                -
-                                            </button>
-                                            <span className="text-xl font-semibold">
-                                                {quantity}
-                                            </span>
-                                            <button onClick={increase} className="px-1 py-1" >
-                                                +
-                                            </button>
+                                        <div className="inline-flex items-center gap-3 bg-gray-200 px-2 py-1 mt-2">
+                                            <button onClick={() => decrease(item.id)}>-</button>
+                                            <span>{item.quantity}</span>
+                                            <button onClick={() => increase(item.id)}>+</button>
                                         </div>
-                                        <a href="#" className='text-gray-600'>remove</a>
-                                    </div>
-                                </div>
-                                <h4 className='text-green-800'>$359.95</h4>
-                            </div>
-                        </div>
-                        <div className='flex gap-4 py-2 items-start text-center '>
-                            <div>
-                                <i class="ri-git-repository-commits-line"></i><br />
-                                Add note
-                            </div>
-                            <div>
-                                <i class="ri-git-repository-commits-line"></i><br />
-                                shipping
-                            </div>
-                        </div>
-                        <h6>Subtotal: <span className='text-3xl'>$359.95 USD</span> </h6>
-                        <h6>Taxes and shipping calculated at checkout</h6>
-                        <div className='flex flex-col gap-2 py-5'>
-                            <button className=" bg-green-700 text-white px-4 py-2 rounded-full">Checkout</button>
-                            <button className="bg-green-700 text-white px-4 py-2 rounded-full">Cart </button>
-                        </div>
 
+                                        <p
+                                            onClick={() => removeFromCart(item.id)}
+                                            className="text-sm text-red-500 cursor-pointer mt-1"
+                                        >
+                                            Remove
+                                        </p>
+                                    </div>
+
+                                    <h6 className="text-green-800 font-semibold">
+                                        ${item.price * item.quantity}
+                                    </h6>
+                                </div>
+                            ))
+                        )}
                     </div>
                 </div>
 

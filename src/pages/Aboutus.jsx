@@ -7,7 +7,7 @@ const Aboutus = () => {
     return (
         <>
             <div className='font-lora'>
-                <Header />
+                {/* <Header /> */}
                 <div className="text-white bg-cover h-[50vh] flex items-center justify-center bg-center bg-[url('https://ap-bokifa.myshopify.com/cdn/shop/files/Mask_group_13_1.jpg?v=1729915599&width=2000')]">
                     <h1 className="text-6xl">About Us</h1>
                 </div>
@@ -336,7 +336,7 @@ const Aboutus = () => {
                     <h5>total books</h5>
                 </div>
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </div >
         </>
     )
