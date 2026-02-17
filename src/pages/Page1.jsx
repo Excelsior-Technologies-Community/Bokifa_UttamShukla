@@ -1,13 +1,8 @@
 import React, { useContext, useRef, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'remixicon/fonts/remixicon.css'
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-
-
-// import required modules
 import { Pagination, Navigation } from 'swiper/modules';
 import Hero from '../components/Hero';
 import BestCollection from '../components/BestCollection';
@@ -16,6 +11,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { CardContext } from "../Context/CardContext";
 import { imagesData, productsData, productsData2, productsData3, Gridproducts, FeaturedAuthData } from './ProductData';
+import { Link } from 'react-router-dom';
 
 const Page1 = ({ product }) => {
 
@@ -59,23 +55,25 @@ const Page1 = ({ product }) => {
                         className="mySwiper"
                     >
                         {productsData.map((items) => (
-                            <SwiperSlide key={items.id}>
-                                <div className="h-auto w-auto text-center group hover:border-2 p-2 rounded-xl">
-                                    <img
-                                        className="object-cover object-center"
-                                        src={items.img}
-                                        alt=""
-                                    />
-                                    <h4 className="text-lg capitalize">{items.title}</h4>
-                                    <a href={items.link} className="text-gray-400 border-b-2 text-sm">
-                                        Ap Bokifa
-                                    </a>
-                                    <h3 className="text-green-800 font-bold text-xl">{items.price}</h3>
-                                    <button onClick={() => addToCart(items)} className="text-white bg-green-800 px-14 py-2 rounded-full sm:hidden group-hover:block transition duration-300 ease-in-out">
-                                        Add to cart
-                                    </button>
-                                </div>
-                            </SwiperSlide>
+                            <SwiperSlide>
+                                    <Link key={items.id} to={`/product/${items.id}`}>
+                                    <div className="h-auto w-auto text-center group hover:border-2 p-2 rounded-xl">
+                                        <img
+                                            className="object-cover object-center"
+                                            src={items.img}
+                                            alt=""
+                                        />
+                                        <h4 className="text-lg capitalize">{items.title}</h4>
+                                        <a href={items.link} className="text-gray-400 border-b-2 text-sm">
+                                            Ap Bokifa
+                                        </a>
+                                        <h3 className="text-green-800 font-bold text-xl">{items.price}</h3>
+                                        <button onClick={() => addToCart(items)} className="text-white bg-green-800 px-14 py-2 rounded-full sm:hidden group-hover:block transition duration-300 ease-in-out">
+                                            Add to cart
+                                        </button>
+                                    </div>
+                            </Link>
+                                </SwiperSlide>
                         ))}
                     </Swiper>
 
@@ -151,6 +149,7 @@ const Page1 = ({ product }) => {
                         {productsData2.map((items) => {
                             return (
                                 <SwiperSlide>
+                                    <Link key={items.id} to={`/product/${items.id}`}>   
                                     <div className='h-auto w-auto text-center group hover:border-2 p-2 rounded-xl' key={items.id}>
                                         <img className='object-cover object-center'
                                             src={items.img} alt="" />
@@ -159,6 +158,7 @@ const Page1 = ({ product }) => {
                                         <h3 className='text-green-800 font-bold text-xl'>{items.price}</h3>
                                         <button onClick={() => addToCart(items)} className='text-white bg-green-800 px-14 py-2 rounded-full sm:hidden group-hover:block transition duration-300 ease-in-out'>Add to cart</button>
                                     </div>
+                                </Link>
                                 </SwiperSlide>
                             )
                         })}
@@ -206,6 +206,7 @@ const Page1 = ({ product }) => {
                         {productsData3.map((items) => {
                             return (
                                 <SwiperSlide>
+                                    <Link key={items.id} to={`/product/${items.id}`}>
                                     <div className='h-auto w-auto text-center group hover:border-2 p-2 rounded-xl' key={items.id}>
                                         <img className='object-cover object-center'
                                             src={items.img} alt="" />
@@ -214,6 +215,7 @@ const Page1 = ({ product }) => {
                                         <h3 className='text-green-800 font-bold text-xl'>{items.price}</h3>
                                         <button onClick={() => addToCart(items)} className='text-white bg-green-800 px-14 py-2 rounded-full sm:hidden group-hover:block transition duration-300 ease-in-out'>Add to cart</button>
                                     </div>
+                                </Link>
                                 </SwiperSlide>
                             )
                         })}

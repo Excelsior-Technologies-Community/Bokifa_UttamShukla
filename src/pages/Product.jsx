@@ -5,11 +5,23 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import Footer from '../components/Footer';
+import { proddata, productsData, productsData2, productsData3 } from './ProductData';
+import { useParams } from 'react-router-dom';
+import { CardContext } from '../Context/CardContext.jsx';
 
 
 
 const Product = ({ product }) => {
-    
+    const { addToCart} = useContext(CardContext);
+
+
+    const result = useParams()
+    let singleProduct =
+        proddata.find((item) => item.id === result.id) ||
+        productsData.find((item) => item.id === result.id) ||
+        productsData2.find((item) => item.id === result.id) ||
+        productsData3.find((item) => item.id === result.id);
+
 
     const [format, setformat] = useState("Hardcover")
     const [quantity, setquantity] = useState(1)
@@ -23,7 +35,7 @@ const Product = ({ product }) => {
                 {/* <Header /> */}
                 <div className='flex flex-col md:flex-row gap-2'>
                     <div className='w-full md:w-1/2 p-2 sm:p-10'>
-                        <img className='object-cover object-center h-auto w-full' src="https://ap-bokifa.myshopify.com/cdn/shop/files/bo_pro_26.jpg?v=1728615762&width=800" alt="" />
+                        <img className='object-cover object-center h-auto w-full' src={singleProduct.img} alt="" />
                         <div className='flex items-center gap-4 mt-2 px-4'>
                             <div className='border-2 border-gray-400 p-1'>
                                 <img className='h-24' src="https://ap-bokifa.myshopify.com/cdn/shop/files/preview_images/bo_pro_22_133cd00b-479c-41a8-98fe-939a4fa57dad.jpg?v=1731319293&width=300" alt="" />
@@ -40,16 +52,16 @@ const Product = ({ product }) => {
                         </div>
                     </div>
                     <div className='w-full md:w-1/2 py-10 px-4'>
-                        <h1 className='sm:text-3xl md:text-5xl font-light'>{product.title}</h1>
+                        <h1 className='sm:text-3xl md:text-5xl font-light'>{singleProduct.title}</h1>
                         <div className='text-gray-400'>
-                            <i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i>(0 reviews)
+                            <i className="ri-star-line"></i><i className="ri-star-line"></i><i className="ri-star-line"></i><i className="ri-star-line"></i><i className="ri-star-line"></i>(0 reviews)
                         </div>
                         <div className='flex items-center border-b-2 pb-4'>
                             <h6 className='text-sm'>SKU:</h6>
-                            <h6 className='text-green-500'><i class="ri-check-line"></i>In Stock</h6>
+                            <h6 className='text-green-500'><i className="ri-check-line"></i>In Stock</h6>
                         </div>
                         <div className='flex items-center '>
-                            <h1 className='text-green-700 sm:text-3xl md:text-4xl mt-3'>$29.95</h1>
+                            <h1 className='text-green-700 sm:text-3xl md:text-4xl mt-3'>{singleProduct.price}</h1>
                             <div className='disapper'>
                                 {format === "Paperback" &&
                                     <div className='flex '>
@@ -112,20 +124,20 @@ const Product = ({ product }) => {
                         </div>
 
                         <div className='flex justify-center py-4 border-b-2'>
-                            <h6 className='font-extralight text-gray-600'> <i class="ri-heart-line"></i> Add to wishlist</h6>
-                            <h6 className='font-extralight text-gray-600'> <i class="ri-repeat-2-line"></i> Add to compare</h6>
+                            <h6 className='font-extralight text-gray-600'> <i className="ri-heart-line"></i> Add to wishlist</h6>
+                            <h6 className='font-extralight text-gray-600'> <i className="ri-repeat-2-line"></i> Add to compare</h6>
                         </div>
                         <div className='py-4'>
                             <div className='flex gap-2 items-center text-gray-600'>
-                                <i class="ri-calendar-check-fill"></i>
+                                <i className="ri-calendar-check-fill"></i>
                                 <h6>2 years warranty</h6>
                             </div>
                             <div className='flex gap-2 items-center text-gray-600'>
-                                <i class="ri-truck-line"></i>
+                                <i className="ri-truck-line"></i>
                                 <h6>Delivery time: 1-2 business days</h6>
                             </div>
                             <div className='flex gap-2 items-center text-gray-600'>
-                                <i class="ri-reset-left-fill"></i>
+                                <i className="ri-reset-left-fill"></i>
                                 <h6>Free 90 days return</h6>
                             </div>
                         </div>

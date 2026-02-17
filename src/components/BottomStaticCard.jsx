@@ -94,7 +94,7 @@ const BottomStaticCard = () => {
                             Add to cart
                         </button>
                     </div>
-                </div>
+                    </div>
 
             </div>
         </>
