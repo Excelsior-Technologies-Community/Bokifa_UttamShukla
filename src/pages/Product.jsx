@@ -114,7 +114,7 @@ const Product = ({ product }) => {
                                 </button>
                             </div>
 
-                            <button onClick={() => addToCart(product)} className="bg-green-600 hover:bg-green-800 text-white font-semibold px-12 py-3 rounded-full shadow-md transition duration-200">
+                            <button onClick={() => addToCart(singleProduct)} className="bg-green-600 hover:bg-green-800 text-white font-semibold px-12 py-3 rounded-full shadow-md transition duration-200">
                                 Add To Cart
                             </button>
 

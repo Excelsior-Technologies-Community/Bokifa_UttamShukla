@@ -2,6 +2,8 @@ import React, { createContext, useState } from 'react'
 export const CardContext = createContext();
 export const CardProvider = ({ children }) => {
     const [cartItem, setcartItem] = useState([])
+    const [wishlist, setWishlist] = useState([])
+
     const addToCart = (product) => {
         setcartItem((prevItems) => {
             const existingItem = prevItems.find((item) => item.id === product.id);
@@ -22,6 +24,20 @@ export const CardProvider = ({ children }) => {
         })
     }
 
+    const addToWishlist = (item) => {
+        console.log("wishlist added", item);
+
+        setWishlist(prev => {
+            const exists = prev.find(p => p.id === item.id);
+            if (exists) return prev;
+            return [...prev, item];
+        });
+    };
+
+    const removeFromWishlist = (id) => {
+        setWishlist(prev => prev.filter(item => item.id !== id));
+    };
+
     const removeFromCart = (id) => {
         setcartItem((prevItems) => prevItems.filter((item) => item.id !== id));
 
@@ -38,7 +54,10 @@ export const CardProvider = ({ children }) => {
     }
 
     return (
-        <CardContext.Provider value={{ cartItem, addToCart, removeFromCart, increase, decrease }}>
+        <CardContext.Provider value={{
+            cartItem, wishlist, addToCart, removeFromCart, increase, decrease, addToWishlist,
+            removeFromWishlist
+        }}>
             {children}
         </CardContext.Provider>
     )

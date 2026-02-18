@@ -1,19 +1,54 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { CardContext } from "../Context/CardContext";
 import { proddata } from '../pages/ProductData';
 import { Link } from 'react-router-dom';
 
-const PaginationGrid = ({ product }) => {
+const PaginationGrid = ({ minPrice, maxPrice }) => {
 
 
     const [currentPage, setCurrentPage] = useState(1)
-    const itemsPerPage = 12;
-    const totalpages = Math.ceil(proddata.length / itemsPerPage)
-    const startIndex = (currentPage - 1) * itemsPerPage
-    const endIndex = startIndex + itemsPerPage
-    const currentItems = proddata.slice(startIndex, endIndex)
+    const [sortType, setSortType] = useState("");
 
-    const { addToCart } = useContext(CardContext);
+    const itemsPerPage = 12;
+
+    const filteredProducts = proddata.filter(
+        item => item.price >= minPrice && item.price <= maxPrice
+    );
+
+    const sortedProducts = [...filteredProducts].sort((a, b) => {
+        switch (sortType) {
+            case "az":
+                return a.title.localeCompare(b.title);
+
+            case "za":
+                return b.title.localeCompare(a.title);
+
+            case "low":
+                return a.price - b.price;
+
+            case "high":
+                return b.price - a.price;
+
+            default:
+                return 0;
+        }
+    });
+
+
+    const totalpages = Math.ceil(sortedProducts.length / itemsPerPage);
+
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+
+    const currentItems = sortedProducts.slice(startIndex, endIndex);
+
+
+    const { addToCart, addToWishlist } = useContext(CardContext);
+
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [minPrice, maxPrice, sortType]);
 
 
 
@@ -21,14 +56,23 @@ const PaginationGrid = ({ product }) => {
     return (
         <>
             <div className='lg:w-[70%]'>
+                <div className='flex justify-end'>
+                    <select
+                        value={sortType}
+                        onChange={(e) => setSortType(e.target.value)}
+                    >
+                        <option value="">Default</option>
+                        <option value="az">Alphabetically A-Z</option>
+                        <option value="za">Alphabetically Z-A</option>
+                        <option value="low">Price Low to High</option>
+                        <option value="high">Price High to Low</option>
+                    </select>
+                </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {currentItems.map((items) => (
-                        <Link key={items.id} to={`/product/${items.id}`}>   
-                            <div
-                                
-                                className="group hover:border rounded-xl p-3 text-center overflow-hidden"
-                            >
-                                {/* Image wrapper */}
+                        <div key={items.id} className="group hover:border rounded-xl p-3 text-center overflow-hidden">
+
+                            <Link to={`/product/${items.id}`}>
                                 <div className="w-full h-auto overflow-hidden rounded-lg">
                                     <img
                                         src={items.img || "/placeholder.png"}
@@ -40,20 +84,27 @@ const PaginationGrid = ({ product }) => {
                                 <h4 className="mt-3 text-lg capitalize line-clamp-2">
                                     {items.title}
                                 </h4>
+                            </Link>
 
-                                <Link  to={'/'} className="text-gray-400 border-b text-sm">
-                                    Ap Bokifa
-                                </Link>
+                            <h3 className="text-green-800 font-bold text-xl mt-2">
+                                {items.price}
+                            </h3>
 
-                                <h3 className="text-green-800 font-bold text-xl mt-2">
-                                    {items.price}
-                                </h3>
+                            <button
+                                onClick={() => addToCart(items)}
+                                className="text-white bg-green-800 px-24 py-2 rounded-full hidden group-hover:block"
+                            >
+                                Add to cart
+                            </button>
 
-                                <button onClick={() => addToCart(items)} className="text-white bg-green-800 px-24 py-2 rounded-full hidden group-hover:block transition duration-300 ease-in-out">
-                                    Add to cart
-                                </button>
-                            </div>
-                        </Link>
+                            <button
+                                onClick={() => addToWishlist(items)}
+                                className="text-white bg-green-800 px-24 mt-2 w-full py-2 rounded-full hidden group-hover:block"
+                            >
+                                WishList
+                            </button>
+                        </div>
+
                     ))}
                 </div>
 

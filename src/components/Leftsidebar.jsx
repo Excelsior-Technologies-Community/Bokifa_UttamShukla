@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 
 
-const Leftsidebar = () => {
-    const [minPrice, setMinPrice] = useState(0);
-    const [maxPrice, setMaxPrice] = useState(318);
+const Leftsidebar = ({ minPrice, maxPrice, setMinPrice, setMaxPrice }) => {
+    
     const handleMinChange = (e) => {
         const value = Number(e.target.value);
         if (value <= maxPrice)
@@ -42,8 +41,8 @@ const Leftsidebar = () => {
                 </div>
                 <div className='border-b-2 pb-4'>
                     <h4 className='font-extralight  py-4 '>Price</h4>
-                    <input type="range" min="0" max="318" value={minPrice} onChange={handleMinChange} />
-                    <input type="range" min="0" max="318" value={maxPrice} onChange={handleMaxChange} />
+                    <input type="range" min="0" max="600" value={minPrice} onChange={handleMinChange} />
+                    <input type="range" min="0" max="600" value={maxPrice} onChange={handleMaxChange} />
 
                     <div className='flex gap-5 px-12 text-gray-500'>
                         <div className='border-2 p-2 '>
