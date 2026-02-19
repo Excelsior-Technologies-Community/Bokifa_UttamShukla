@@ -85,26 +85,34 @@ const Header = () => {
                                     </button>
 
                                     <div className="dropdown-menu hidden p-4 absolute w-screen text-center gap-4">
-                                        <div className="flex flex-nowrap gap-4">
-                                            <div className="w-1/4 shrink-0">
+                                        <div className="flex flex-nowrap gap-20">
+                                            <Link to="/" >
+                                            <div className="shrink-0">
                                                 <img src="https://ap-bokifa.myshopify.com/cdn/shop/files/ap_bo_megahome_1.png?v=1729483836&width=3000" />
                                                 <h2 className="text-sm font-semibold mt-2">Home 1</h2>
                                             </div>
+                                            </Link>
 
-                                            <div className="w-1/4 shrink-0">
+                                            <Link to="/" >
+                                            <div className="shrink-0">
                                                 <img src="https://ap-bokifa.myshopify.com/cdn/shop/files/ap_bo_megahome_1.png?v=1729483836&width=3000" />
                                                 <h2 className="text-sm font-semibold mt-2">Home 2</h2>
                                             </div>
+                                            </Link>
 
-                                            <div className="w-1/4 shrink-0">
+                                            <Link to="/" >
+                                            <div className="shrink-0">
                                                 <img src="https://ap-bokifa.myshopify.com/cdn/shop/files/ap_bo_megahome_1.png?v=1729483836&width=3000" />
                                                 <h2 className="text-sm font-semibold mt-2">Home 3</h2>
                                             </div>
+                                            </Link>
 
-                                            <div className="w-1/4 shrink-0">
+                                            <Link to="/" >
+                                            <div className="shrink-0">
                                                 <img src="https://ap-bokifa.myshopify.com/cdn/shop/files/ap_bo_megahome_1.png?v=1729483836&width=3000" />
                                                 <h2 className="text-sm font-semibold mt-2">Home 4</h2>
                                             </div>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
